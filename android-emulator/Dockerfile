@@ -2,7 +2,7 @@ FROM ksoichiro/android
 
 MAINTAINER ksoichiro "soichiro.kashima@gmail.com"
 
-RUN echo y | android update sdk --filter platform-tools,build-tools-19.0.3,sysimg-17,android-17,extra-android-support --no-ui --force
+RUN (while /bin/true; do sleep 1; echo y; done) | android update sdk --filter platform-tools,tools,android-17,extra-android-support,system-image,sys-img-armeabi-v7a-android-17 --all --no-ui --force
 
 # Set up and run emulator
 RUN echo no | android create avd --force -n test -t android-17
